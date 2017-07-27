@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+extraProperties=sonar.pdf.password\=admin\r\nsonar.host.url\=http\://localhost\:9000\r\nsonar.pdf.username\=admin
+projectKey=com.sapient.automation\:project
+serverUrl=http\://localhost\:9000
+version=2

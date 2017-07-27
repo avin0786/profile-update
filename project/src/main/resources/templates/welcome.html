@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Welcome</title>
+<link rel="stylesheet"
+	href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"></link>
+
+</head>
+<body>
+
+
+	<div class="col-md-9 personal-info">
+
+		<h3>Update Profile</h3>
+
+		<form name="profileupdate" class="form-horizontal" role="form" action="#" th:action="@{/profileupdate}" th:object="${profile}"
+			method="post">
+
+			<input name="userId" class="form-control" type="hidden" 
+				value="248400452" />
+
+			<div class="form-group">
+				<label class="col-lg-3 control-label">First name:</label>
+				<div class="col-lg-8">
+					<input name="firstName" class="form-control" type="text" th:field="*{firstName}" required="true" data-validation="length alphanumeric" data-validation-length="min4"/>	
+					<p id="namemessage" style="color:red" th:text="${firstName}" ></p>				 
+				</div>				
+			</div>
+			
+			<div class="form-group">
+				<label class="col-lg-3 control-label">Last name:</label>
+				<div class="col-lg-8">
+					<input name="lastName" class="form-control" type="text" th:field="*{lastName}" data-validation="alphanumeric"/>
+					 <p id="lastnamemessage" style="color:red" th:text="${lastName}" ></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-3 control-label">Email:</label>
+				<div class="col-lg-8">
+					<input name="email" class="form-control" type="text" th:field="*{email}" required="true" data-validation="email"/>
+					<p id="emailmessage" style="color:red" th:text="${email}" ></p>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-md-3 control-label">Phone:</label>
+				<div class="col-md-8">
+					<input name="phone" class="form-control" type="text" th:field="*{phone}"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label"></label>
+				<div class="col-md-8">
+					<input type="submit" name="submit" class="btn btn-primary" value="Save Changes" />
+					<span></span> <input name="reset" type="reset" class="btn btn-default"
+						value="Cancel" />
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+	<script>
+		$.validate({
+			lang: 'en'
+		});
+	</script>
+</body>
+</html>

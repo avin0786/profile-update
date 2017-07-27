@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Tests" verbose="5" data-provider-thread-count="1">
+	<listeners>
+         <listener class-name="com.sapient.automation.util.TestNGCustomReportListener" />
+    </listeners>
+  
+	<test name="HomePageTest">
+		<parameter name="path" value=""/>
+		<classes>
+		    <class name="com.sapient.automation.pages.HomePageTest"/>
+		   </classes>
+	</test> 
+	<test name="ErrorPageTest">
+		<parameter name="path" value="/error"/>
+		<classes>
+		    <class name="com.sapient.automation.pages.ErrorPageTest"/>
+		   </classes>
+	</test> 	
+	<parameter name="username" value="testuser"/>	
+</suite>
